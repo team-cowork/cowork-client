@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "mf": {
+      "source": "module-federation/core",
+      "sourceType": "github",
+      "computedHash": "809f827f551971d6fd8df6803b57ac3091f640bcaed7c26d38c4fbe9fb78c27c"
+    },
     "turborepo": {
       "source": "vercel/turborepo",
       "sourceType": "github",
