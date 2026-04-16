@@ -14,8 +14,8 @@ Format: `type(scope): 설명`
 
 - Types: `feat` / `fix` / `docs` / `style` / `refactor` / `test` / `chore` / `perf` / `ci/cd`
 - Scope:
-  - MFE under `apps/` → `<app-name>/<layer>` (e.g. `cowork-chat/ui`)
-  - Package under `packages/` → `<layer>` (e.g. `ui`)
+  - MFE under `apps/` → `<app-name>/<layer>` (e.g. `cowork-chat/shared`)
+  - Package under `packages/` → `<layer>` (e.g. `shared`)
   - Outside `apps/` and `packages/` → `global` (CI/CD, root config, etc.)
 - Layers: `app` / `pages` / `widgets` / `features` / `entities` / `shared`
 - Description: Korean, no period
