@@ -4,8 +4,6 @@
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "paths": {
       "*": ["./@mf-types/*"]
     }
