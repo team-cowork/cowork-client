@@ -1,8 +1,13 @@
 {
   "extends": "@cowork/typescript-config/vite.json",
-  "include": ["src"],
+  "include": ["src", "@mf-types"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "lib": ["ESNext", "DOM", "DOM.Iterable"]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./@mf-types/*"]
+    }
   }
 }

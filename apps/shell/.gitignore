@@ -3,3 +3,8 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Module Federation generated types + temp dirs
+@mf-types
+.__mf__temp
+.mf
