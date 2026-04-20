@@ -8,7 +8,7 @@ import { tanstackRouter } from "@tanstack/router-plugin/rspack";
 
 export default defineConfig({
   server: { port: 3003 },
-  dev: { assetPrefix: "http://localhost:3003" },
+  dev: { assetPrefix: "http://localhost:3003", lazyCompilation: false },
   output: { assetPrefix: "http://localhost:3003" },
   source: { entry: { index: "./src/main.tsx" } },
   html: { template: "./index.html" },
