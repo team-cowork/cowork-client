@@ -21,6 +21,7 @@ export default defineConfig({
     pluginModuleFederation(
       createModuleFederationConfig({
         name: "cowork_shell",
+        experiments: { asyncStartup: true },
         remotes: {
           cowork_profile:
             "cowork_profile@http://localhost:3001/mf-manifest.json",
@@ -28,8 +29,8 @@ export default defineConfig({
           cowork_chat: "cowork_chat@http://localhost:3003/mf-manifest.json",
         },
         shared: {
-          react: { singleton: true },
-          "react-dom": { singleton: true },
+          react: { singleton: true, eager: false },
+          "react-dom": { singleton: true, eager: false },
         },
       }),
     ),

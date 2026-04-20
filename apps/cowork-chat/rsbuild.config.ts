@@ -22,10 +22,11 @@ export default defineConfig({
     pluginModuleFederation(
       createModuleFederationConfig({
         name: "cowork_chat",
+        experiments: { asyncStartup: true },
         exposes: { "./App": "./src/App.tsx" },
         shared: {
-          react: { singleton: true },
-          "react-dom": { singleton: true },
+          react: { singleton: true, eager: false },
+          "react-dom": { singleton: true, eager: false },
         },
       }),
     ),
