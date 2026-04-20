@@ -4,5 +4,5 @@ export default function App() {
       <h2 className="text-lg font-bold">Profile</h2>
       <p>cowork-profile 앱 컴포넌트</p>
     </div>
-  )
+  );
 }

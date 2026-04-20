@@ -3,16 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3001",
-    "build": "vite build",
+    "dev": "rsbuild dev --port 3001",
+    "build": "rsbuild build",
     "check-types": "tsc --noEmit",
     "lint": "eslint src --ext ts,tsx",
-    "preview": "vite preview",
-    "start": "vite"
+    "preview": "rsbuild preview",
+    "start": "rsbuild dev --port 3001"
   },
   "dependencies": {
-    "@module-federation/vite": "^1.14.3",
-    "@tailwindcss/vite": "^4.2.2",
     "@tanstack/react-router": "^1.168.21",
     "@tanstack/react-router-devtools": "^1.166.13",
     "@tanstack/router-plugin": "^1.167.22",
@@ -25,11 +23,15 @@
   "devDependencies": {
     "@cowork/eslint-config": "workspace:*",
     "@cowork/typescript-config": "workspace:*",
+    "@module-federation/enhanced": "^0.18.3",
+    "@module-federation/rsbuild-plugin": "^0.18.3",
+    "@rsbuild/core": "^1.5.6",
+    "@rsbuild/plugin-react": "^1.4.0",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^8.57.0",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.0"
+    "postcss": "^8.4.49",
+    "typescript": "^6.0.2"
   }
 }
