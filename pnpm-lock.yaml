@@ -53,10 +53,10 @@ importers:
         version: link:../../packages/typescript-config
       '@module-federation/enhanced':
         specifier: ^0.18.3
-        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/rsbuild-plugin':
         specifier: ^0.18.3
-        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@rsbuild/core':
         specifier: ^1.5.6
         version: 1.7.5
@@ -79,8 +79,8 @@ importers:
         specifier: ^8.4.49
         version: 8.5.9
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^5.9.3
+        version: 5.9.3
 
   apps/cowork-issue:
     dependencies:
@@ -117,10 +117,10 @@ importers:
         version: link:../../packages/typescript-config
       '@module-federation/enhanced':
         specifier: ^0.18.3
-        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/rsbuild-plugin':
         specifier: ^0.18.3
-        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@rsbuild/core':
         specifier: ^1.5.6
         version: 1.7.5
@@ -143,8 +143,8 @@ importers:
         specifier: ^8.4.49
         version: 8.5.9
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^5.9.3
+        version: 5.9.3
 
   apps/cowork-profile:
     dependencies:
@@ -181,10 +181,10 @@ importers:
         version: link:../../packages/typescript-config
       '@module-federation/enhanced':
         specifier: ^0.18.3
-        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/rsbuild-plugin':
         specifier: ^0.18.3
-        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@rsbuild/core':
         specifier: ^1.5.6
         version: 1.7.5
@@ -207,8 +207,8 @@ importers:
         specifier: ^8.4.49
         version: 8.5.9
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^5.9.3
+        version: 5.9.3
 
   apps/shell:
     dependencies:
@@ -245,10 +245,10 @@ importers:
         version: link:../../packages/typescript-config
       '@module-federation/enhanced':
         specifier: ^0.18.3
-        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/rsbuild-plugin':
         specifier: ^0.18.3
-        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+        version: 0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@rsbuild/core':
         specifier: ^1.5.6
         version: 1.7.5
@@ -271,17 +271,17 @@ importers:
         specifier: ^8.4.49
         version: 8.5.9
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^5.9.3
+        version: 5.9.3
 
   packages/eslint-config:
     dependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.1.0
-        version: 7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@6.0.2)
+        version: 7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
         specifier: ^7.1.0
-        version: 7.1.0(eslint@8.57.1)(typescript@6.0.2)
+        version: 7.1.0(eslint@8.57.1)(typescript@5.9.3)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.1)
@@ -1130,13 +1130,13 @@ packages:
       semver: 7.6.3
     dev: true
 
-  /@module-federation/cli@0.18.4(typescript@6.0.2):
+  /@module-federation/cli@0.18.4(typescript@5.9.3):
     resolution: {integrity: sha512-31c+2OjtRdsYq7oV+rCoTO9AXizT3D9CNzofZ9EVRGsaS9+H+nJKTkK+pw+IhK0Y8I0HsP+uxgLrazqF0tLbgg==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
       '@modern-js/node-bundle-require': 2.68.2
-      '@module-federation/dts-plugin': 0.18.4(typescript@6.0.2)
+      '@module-federation/dts-plugin': 0.18.4(typescript@5.9.3)
       '@module-federation/sdk': 0.18.4
       chalk: 3.0.0
       commander: 11.1.0
@@ -1162,7 +1162,7 @@ packages:
       react-dom: 19.2.5(react@19.2.5)
     dev: true
 
-  /@module-federation/dts-plugin@0.18.4(typescript@6.0.2):
+  /@module-federation/dts-plugin@0.18.4(typescript@5.9.3):
     resolution: {integrity: sha512-5FlrajLCypQ8+vEsncgEGpDmxUDG+Ub6ogKOE00e2gMxcYlgcCZNUSn5VbEGdCMcHQmIK2xt3WGQT30/7j2KiQ==}
     peerDependencies:
       typescript: ^4.9.0 || ^5.0.0
@@ -1186,7 +1186,7 @@ packages:
       log4js: 6.9.1
       node-schedule: 2.1.1
       rambda: 9.4.2
-      typescript: 6.0.2
+      typescript: 5.9.3
       ws: 8.18.0
     transitivePeerDependencies:
       - bufferutil
@@ -1195,7 +1195,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@module-federation/enhanced@0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2):
+  /@module-federation/enhanced@0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2):
     resolution: {integrity: sha512-KiBw7e+aIBFoO2cmN5hJlKrYv3nUuXsB8yOSVnV9JBAkYNyRZQ9xoSbRCDt8rDRz/ydgEURUIwnGyL2ZU5jZYw==}
     hasBin: true
     peerDependencies:
@@ -1211,19 +1211,19 @@ packages:
         optional: true
     dependencies:
       '@module-federation/bridge-react-webpack-plugin': 0.18.4
-      '@module-federation/cli': 0.18.4(typescript@6.0.2)
+      '@module-federation/cli': 0.18.4(typescript@5.9.3)
       '@module-federation/data-prefetch': 0.18.4(react-dom@19.2.5)(react@19.2.5)
-      '@module-federation/dts-plugin': 0.18.4(typescript@6.0.2)
+      '@module-federation/dts-plugin': 0.18.4(typescript@5.9.3)
       '@module-federation/error-codes': 0.18.4
       '@module-federation/inject-external-runtime-core-plugin': 0.18.4(@module-federation/runtime-tools@0.18.4)
       '@module-federation/managers': 0.18.4
-      '@module-federation/manifest': 0.18.4(typescript@6.0.2)
-      '@module-federation/rspack': 0.18.4(@rspack/core@1.7.11)(typescript@6.0.2)
+      '@module-federation/manifest': 0.18.4(typescript@5.9.3)
+      '@module-federation/rspack': 0.18.4(@rspack/core@1.7.11)(typescript@5.9.3)
       '@module-federation/runtime-tools': 0.18.4
       '@module-federation/sdk': 0.18.4
       btoa: 1.2.1
       schema-utils: 4.3.3
-      typescript: 6.0.2
+      typescript: 5.9.3
       upath: 2.0.1
       webpack: 5.106.2
     transitivePeerDependencies:
@@ -1259,10 +1259,10 @@ packages:
       fs-extra: 9.1.0
     dev: true
 
-  /@module-federation/manifest@0.18.4(typescript@6.0.2):
+  /@module-federation/manifest@0.18.4(typescript@5.9.3):
     resolution: {integrity: sha512-1+sfldRpYmJX/SDqG3gWeeBbPb0H0eKyQcedf77TQGwFypVAOJwI39qV0yp3FdjutD7GdJ2TGPBHnGt7AbEvKA==}
     dependencies:
-      '@module-federation/dts-plugin': 0.18.4(typescript@6.0.2)
+      '@module-federation/dts-plugin': 0.18.4(typescript@5.9.3)
       '@module-federation/managers': 0.18.4
       '@module-federation/sdk': 0.18.4
       chalk: 3.0.0
@@ -1276,7 +1276,7 @@ packages:
       - vue-tsc
     dev: true
 
-  /@module-federation/node@2.7.15(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2):
+  /@module-federation/node@2.7.15(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2):
     resolution: {integrity: sha512-AtZTx1spzsSurHA5ARML13r+9wnpKxWsbOQiyLg3Tl9rt6t/sERu02bNL3XW29WfzAnX6gvFhYeILo0xO5m/lw==}
     peerDependencies:
       next: '*'
@@ -1291,7 +1291,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@module-federation/enhanced': 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+      '@module-federation/enhanced': 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/runtime': 0.18.4
       '@module-federation/sdk': 0.18.4
       btoa: 1.2.1
@@ -1310,7 +1310,7 @@ packages:
       - vue-tsc
     dev: true
 
-  /@module-federation/rsbuild-plugin@0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2):
+  /@module-federation/rsbuild-plugin@0.18.4(@rsbuild/core@1.7.5)(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2):
     resolution: {integrity: sha512-wbCs6n6aWa8bJpB1SoslRDfjt6GfeIOiTFcjxUdnsa/wZkUR3WZNkw92VtzcdC01+KHfM6E07Bqtuajft/XhUQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -1319,8 +1319,8 @@ packages:
       '@rsbuild/core':
         optional: true
     dependencies:
-      '@module-federation/enhanced': 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
-      '@module-federation/node': 2.7.15(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@6.0.2)(webpack@5.106.2)
+      '@module-federation/enhanced': 0.18.4(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
+      '@module-federation/node': 2.7.15(@rspack/core@1.7.11)(react-dom@19.2.5)(react@19.2.5)(typescript@5.9.3)(webpack@5.106.2)
       '@module-federation/sdk': 0.18.4
       '@rsbuild/core': 1.7.5
       fs-extra: 11.3.0
@@ -1338,7 +1338,7 @@ packages:
       - webpack
     dev: true
 
-  /@module-federation/rspack@0.18.4(@rspack/core@1.7.11)(typescript@6.0.2):
+  /@module-federation/rspack@0.18.4(@rspack/core@1.7.11)(typescript@5.9.3):
     resolution: {integrity: sha512-gnvXKtk/w0ML15JHueWej5/8Lkoho7EoYUxvO77nBCnGOlXNqVYqLZ3REy2SS/8SQ4vQK156eSiyUkth2OYQqw==}
     peerDependencies:
       '@rspack/core': '>=0.7'
@@ -1351,15 +1351,15 @@ packages:
         optional: true
     dependencies:
       '@module-federation/bridge-react-webpack-plugin': 0.18.4
-      '@module-federation/dts-plugin': 0.18.4(typescript@6.0.2)
+      '@module-federation/dts-plugin': 0.18.4(typescript@5.9.3)
       '@module-federation/inject-external-runtime-core-plugin': 0.18.4(@module-federation/runtime-tools@0.18.4)
       '@module-federation/managers': 0.18.4
-      '@module-federation/manifest': 0.18.4(typescript@6.0.2)
+      '@module-federation/manifest': 0.18.4(typescript@5.9.3)
       '@module-federation/runtime-tools': 0.18.4
       '@module-federation/sdk': 0.18.4
       '@rspack/core': 1.7.11(@swc/helpers@0.5.21)
       btoa: 1.2.1
-      typescript: 6.0.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -2028,7 +2028,7 @@ packages:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
     dev: true
 
-  /@typescript-eslint/eslint-plugin@7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@6.0.2):
+  /@typescript-eslint/eslint-plugin@7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@5.9.3):
     resolution: {integrity: sha512-j6vT/kCulhG5wBmGtstKeiVr1rdXE4nk+DT1k6trYkwlrvW9eOF5ZbgKnd/YR6PcM4uTEXa0h6Fcvf6X7Dxl0w==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2040,10 +2040,10 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 7.1.0(eslint@8.57.1)(typescript@6.0.2)
+      '@typescript-eslint/parser': 7.1.0(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/scope-manager': 7.1.0
-      '@typescript-eslint/type-utils': 7.1.0(eslint@8.57.1)(typescript@6.0.2)
-      '@typescript-eslint/utils': 7.1.0(eslint@8.57.1)(typescript@6.0.2)
+      '@typescript-eslint/type-utils': 7.1.0(eslint@8.57.1)(typescript@5.9.3)
+      '@typescript-eslint/utils': 7.1.0(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/visitor-keys': 7.1.0
       debug: 4.3.4
       eslint: 8.57.1
@@ -2051,13 +2051,13 @@ packages:
       ignore: 5.3.1
       natural-compare: 1.4.0
       semver: 7.5.4
-      ts-api-utils: 1.0.3(typescript@6.0.2)
-      typescript: 6.0.2
+      ts-api-utils: 1.0.3(typescript@5.9.3)
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/parser@7.1.0(eslint@8.57.1)(typescript@6.0.2):
+  /@typescript-eslint/parser@7.1.0(eslint@8.57.1)(typescript@5.9.3):
     resolution: {integrity: sha512-V1EknKUubZ1gWFjiOZhDSNToOjs63/9O0puCgGS8aDOgpZY326fzFu15QAUjwaXzRZjf/qdsdBrckYdv9YxB8w==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2069,11 +2069,11 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 7.1.0
       '@typescript-eslint/types': 7.1.0
-      '@typescript-eslint/typescript-estree': 7.1.0(typescript@6.0.2)
+      '@typescript-eslint/typescript-estree': 7.1.0(typescript@5.9.3)
       '@typescript-eslint/visitor-keys': 7.1.0
       debug: 4.3.4
       eslint: 8.57.1
-      typescript: 6.0.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2086,7 +2086,7 @@ packages:
       '@typescript-eslint/visitor-keys': 7.1.0
     dev: false
 
-  /@typescript-eslint/type-utils@7.1.0(eslint@8.57.1)(typescript@6.0.2):
+  /@typescript-eslint/type-utils@7.1.0(eslint@8.57.1)(typescript@5.9.3):
     resolution: {integrity: sha512-UZIhv8G+5b5skkcuhgvxYWHjk7FW7/JP5lPASMEUoliAPwIH/rxoUSQPia2cuOj9AmDZmwUl1usKm85t5VUMew==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2096,12 +2096,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 7.1.0(typescript@6.0.2)
-      '@typescript-eslint/utils': 7.1.0(eslint@8.57.1)(typescript@6.0.2)
+      '@typescript-eslint/typescript-estree': 7.1.0(typescript@5.9.3)
+      '@typescript-eslint/utils': 7.1.0(eslint@8.57.1)(typescript@5.9.3)
       debug: 4.3.4
       eslint: 8.57.1
-      ts-api-utils: 1.0.3(typescript@6.0.2)
-      typescript: 6.0.2
+      ts-api-utils: 1.0.3(typescript@5.9.3)
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2111,7 +2111,7 @@ packages:
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: false
 
-  /@typescript-eslint/typescript-estree@7.1.0(typescript@6.0.2):
+  /@typescript-eslint/typescript-estree@7.1.0(typescript@5.9.3):
     resolution: {integrity: sha512-k7MyrbD6E463CBbSpcOnwa8oXRdHzH1WiVzOipK3L5KSML92ZKgUBrTlehdi7PEIMT8k0bQixHUGXggPAlKnOQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2127,13 +2127,13 @@ packages:
       is-glob: 4.0.3
       minimatch: 9.0.3
       semver: 7.5.4
-      ts-api-utils: 1.0.3(typescript@6.0.2)
-      typescript: 6.0.2
+      ts-api-utils: 1.0.3(typescript@5.9.3)
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/utils@7.1.0(eslint@8.57.1)(typescript@6.0.2):
+  /@typescript-eslint/utils@7.1.0(eslint@8.57.1)(typescript@5.9.3):
     resolution: {integrity: sha512-WUFba6PZC5OCGEmbweGpnNJytJiLG7ZvDBJJoUcX4qZYf1mGZ97mO2Mps6O2efxJcJdRNpqweCistDbZMwIVHw==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2144,7 +2144,7 @@ packages:
       '@types/semver': 7.5.6
       '@typescript-eslint/scope-manager': 7.1.0
       '@typescript-eslint/types': 7.1.0
-      '@typescript-eslint/typescript-estree': 7.1.0(typescript@6.0.2)
+      '@typescript-eslint/typescript-estree': 7.1.0(typescript@5.9.3)
       eslint: 8.57.1
       semver: 7.5.4
     transitivePeerDependencies:
@@ -5108,13 +5108,13 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: true
 
-  /ts-api-utils@1.0.3(typescript@6.0.2):
+  /ts-api-utils@1.0.3(typescript@5.9.3):
     resolution: {integrity: sha512-wNMeqtMz5NtwpT/UZGY5alT+VoKdSsOOP/kqHFcUW1P/VRhH2wJ48+DN2WwUliNbQ976ETwDL0Ifd2VVvgonvg==}
     engines: {node: '>=16.13.0'}
     peerDependencies:
       typescript: '>=4.2.0'
     dependencies:
-      typescript: 6.0.2
+      typescript: 5.9.3
     dev: false
 
   /tslib@2.8.1:
@@ -5217,8 +5217,8 @@ packages:
     engines: {node: '>=14.17'}
     dev: true
 
-  /typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  /typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
