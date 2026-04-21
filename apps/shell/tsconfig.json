@@ -1,5 +1,5 @@
 {
-  "extends": "@cowork/typescript-config/vite.json",
+  "extends": "@cowork/typescript-config/rsbuild.json",
   "include": ["src", "@mf-types"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {

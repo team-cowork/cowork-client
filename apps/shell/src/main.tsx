@@ -5,7 +5,7 @@ import './styles.css'
 
 const router = createRouter({
   routeTree,
-  defaultPreload: false,
+  defaultPreload: 'intent',
   scrollRestoration: true,
 })
 
