@@ -1,8 +1,13 @@
 {
-  "extends": "@cowork/typescript-config/vite.json",
-  "include": ["src"],
+  "extends": "@cowork/typescript-config/rsbuild.json",
+  "include": ["src", "@mf-types"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "lib": ["ESNext", "DOM", "DOM.Iterable"]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "cowork_profile/*": ["./@mf-types/cowork_profile/*"],
+      "cowork_issue/*": ["./@mf-types/cowork_issue/*"],
+      "cowork_chat/*": ["./@mf-types/cowork_chat/*"]
+    }
   }
 }

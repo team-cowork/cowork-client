@@ -1,13 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { lazy, Suspense } from 'react'
+import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 
-const ProfileApp = lazy(() => import('cowork_profile/App'))
-const IssueApp   = lazy(() => import('cowork_issue/App'))
-const ChatApp    = lazy(() => import('cowork_chat/App'))
+const ProfileApp = lazy(() => import("cowork_profile/App"));
+const IssueApp = lazy(() => import("cowork_issue/App"));
+const ChatApp = lazy(() => import("cowork_chat/App"));
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: HomeComponent,
-})
+});
 
 function HomeComponent() {
   return (
@@ -28,5 +28,5 @@ function HomeComponent() {
         </Suspense>
       </section>
     </div>
-  )
+  );
 }

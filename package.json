@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "cowork-client",
+  "name": "cowork-web-client",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
