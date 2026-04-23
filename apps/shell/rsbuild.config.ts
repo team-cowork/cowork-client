@@ -42,8 +42,8 @@ export default defineConfig({
       name: 'shell',
       remotes: {
         cowork_chat: 'cowork_chat@http://127.0.0.1:3001/mf-manifest.json',
-        cowork_profile: 'cowork_profile@http://127.0.0.1:3002/mf-manifest.json',
-        cowork_issue: 'cowork_issue@http://127.0.0.1:3003/mf-manifest.json',
+        cowork_issue: 'cowork_issue@http://127.0.0.1:3002/mf-manifest.json',
+        cowork_profile: 'cowork_profile@http://127.0.0.1:3003/mf-manifest.json',
       },
       dts: {
         consumeTypes: false,
