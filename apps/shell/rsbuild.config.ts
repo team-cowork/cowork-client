@@ -11,6 +11,13 @@ export default defineConfig({
       index: './src/main.tsx',
     },
   },
+  html: {
+    title: 'cowork',
+    meta: {
+      description: 'cowork shell application',
+      viewport: 'width=device-width, initial-scale=1.0',
+    },
+  },
   dev: {
     assetPrefix: true,
     lazyCompilation: false,
@@ -44,6 +51,9 @@ export default defineConfig({
         cowork_chat: 'cowork_chat@http://127.0.0.1:3001/mf-manifest.json',
         cowork_issue: 'cowork_issue@http://127.0.0.1:3002/mf-manifest.json',
         cowork_profile: 'cowork_profile@http://127.0.0.1:3003/mf-manifest.json',
+      },
+      experiments: {
+        asyncStartup: true,
       },
       dts: {
         consumeTypes: false,
