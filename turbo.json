@@ -1,11 +1,17 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "ui":"tui",
+  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "env": [
+        "PUBLIC_PROFILE_URL",
+        "PUBLIC_ISSUE_URL",
+        "PUBLIC_CHAT_URL",
+        "PUBLIC_ASSET_PREFIX"
+      ]
     },
     "check-types": {
       "dependsOn": ["^build"],
