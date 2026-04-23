@@ -22,6 +22,7 @@ export default defineConfig({
       createModuleFederationConfig({
         name: "cowork_shell",
         experiments: { asyncStartup: true },
+        shareStrategy: "loaded-first",
         remotes: {
           cowork_profile: `cowork_profile@${process.env.PUBLIC_PROFILE_URL ?? "http://localhost:3001"}/mf-manifest.json`,
           cowork_issue: `cowork_issue@${process.env.PUBLIC_ISSUE_URL ?? "http://localhost:3002"}/mf-manifest.json`,
