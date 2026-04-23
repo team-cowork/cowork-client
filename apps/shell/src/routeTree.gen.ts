@@ -9,12 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as IssueRouteImport } from './routes/issue'
+import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProfileSplatRouteImport } from './routes/profile.$'
+import { Route as IssueSplatRouteImport } from './routes/issue.$'
+import { Route as ChatSplatRouteImport } from './routes/chat.$'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IssueRoute = IssueRouteImport.update({
+  id: '/issue',
+  path: '/issue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,40 +37,108 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileSplatRoute = ProfileSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => ProfileRoute,
+} as any)
+const IssueSplatRoute = IssueSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => IssueRoute,
+} as any)
+const ChatSplatRoute = ChatSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => ChatRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/chat': typeof ChatRouteWithChildren
+  '/issue': typeof IssueRouteWithChildren
+  '/profile': typeof ProfileRouteWithChildren
+  '/chat/$': typeof ChatSplatRoute
+  '/issue/$': typeof IssueSplatRoute
+  '/profile/$': typeof ProfileSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/chat': typeof ChatRouteWithChildren
+  '/issue': typeof IssueRouteWithChildren
+  '/profile': typeof ProfileRouteWithChildren
+  '/chat/$': typeof ChatSplatRoute
+  '/issue/$': typeof IssueSplatRoute
+  '/profile/$': typeof ProfileSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/chat': typeof ChatRouteWithChildren
+  '/issue': typeof IssueRouteWithChildren
+  '/profile': typeof ProfileRouteWithChildren
+  '/chat/$': typeof ChatSplatRoute
+  '/issue/$': typeof IssueSplatRoute
+  '/profile/$': typeof ProfileSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/issue'
+    | '/profile'
+    | '/chat/$'
+    | '/issue/$'
+    | '/profile/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to:
+    | '/'
+    | '/chat'
+    | '/issue'
+    | '/profile'
+    | '/chat/$'
+    | '/issue/$'
+    | '/profile/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/issue'
+    | '/profile'
+    | '/chat/$'
+    | '/issue/$'
+    | '/profile/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  ChatRoute: typeof ChatRouteWithChildren
+  IssueRoute: typeof IssueRouteWithChildren
+  ProfileRoute: typeof ProfileRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/issue': {
+      id: '/issue'
+      path: '/issue'
+      fullPath: '/issue'
+      preLoaderRoute: typeof IssueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -65,12 +148,66 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile/$': {
+      id: '/profile/$'
+      path: '/$'
+      fullPath: '/profile/$'
+      preLoaderRoute: typeof ProfileSplatRouteImport
+      parentRoute: typeof ProfileRoute
+    }
+    '/issue/$': {
+      id: '/issue/$'
+      path: '/$'
+      fullPath: '/issue/$'
+      preLoaderRoute: typeof IssueSplatRouteImport
+      parentRoute: typeof IssueRoute
+    }
+    '/chat/$': {
+      id: '/chat/$'
+      path: '/$'
+      fullPath: '/chat/$'
+      preLoaderRoute: typeof ChatSplatRouteImport
+      parentRoute: typeof ChatRoute
+    }
   }
 }
 
+interface ChatRouteChildren {
+  ChatSplatRoute: typeof ChatSplatRoute
+}
+
+const ChatRouteChildren: ChatRouteChildren = {
+  ChatSplatRoute: ChatSplatRoute,
+}
+
+const ChatRouteWithChildren = ChatRoute._addFileChildren(ChatRouteChildren)
+
+interface IssueRouteChildren {
+  IssueSplatRoute: typeof IssueSplatRoute
+}
+
+const IssueRouteChildren: IssueRouteChildren = {
+  IssueSplatRoute: IssueSplatRoute,
+}
+
+const IssueRouteWithChildren = IssueRoute._addFileChildren(IssueRouteChildren)
+
+interface ProfileRouteChildren {
+  ProfileSplatRoute: typeof ProfileSplatRoute
+}
+
+const ProfileRouteChildren: ProfileRouteChildren = {
+  ProfileSplatRoute: ProfileSplatRoute,
+}
+
+const ProfileRouteWithChildren =
+  ProfileRoute._addFileChildren(ProfileRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  ChatRoute: ChatRouteWithChildren,
+  IssueRoute: IssueRouteWithChildren,
+  ProfileRoute: ProfileRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,13 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
-  component: HomeComponent,
-})
+  component: ProfileIndexPage,
+});
 
-function HomeComponent() {
+function ProfileIndexPage() {
   return (
     <div className="p-2">
-      <h3>Welcome Home!</h3>
+      <h3>Welcome Profile!</h3>
+      <Link to="/example" className="[&.active]:font-bold">
+        Example
+      </Link>
     </div>
-  )
+  );
 }

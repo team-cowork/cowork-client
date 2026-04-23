@@ -1,37 +1,37 @@
 {
-  "name": "@cowork/issue",
+  "name": "cowork-issue",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "rsbuild dev --port 3002",
     "build": "rsbuild build",
-    "check-types": "tsc --noEmit",
-    "lint": "eslint src --ext ts,tsx",
-    "preview": "rsbuild preview",
-    "start": "rsbuild dev --port 3002"
+    "dev": "rsbuild --port 3002",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.168.21",
+    "@module-federation/enhanced": "^2.3.3",
+    "@tanstack/react-router": "^1.168.23",
     "@tanstack/react-router-devtools": "^1.166.13",
-    "@tanstack/router-plugin": "^1.167.22",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "redaxios": "^0.5.1",
-    "tailwindcss": "^4.2.2",
-    "zod": "^3.24.2"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@cowork/eslint-config": "workspace:*",
-    "@cowork/typescript-config": "workspace:*",
-    "@module-federation/enhanced": "^0.18.3",
-    "@module-federation/rsbuild-plugin": "^0.18.3",
-    "@rsbuild/core": "^1.5.6",
-    "@rsbuild/plugin-react": "^1.4.0",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "eslint": "^8.57.0",
-    "postcss": "^8.4.49",
+    "@module-federation/rsbuild-plugin": "^2.3.3",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@rsbuild/core": "^2.0.0",
+    "@rsbuild/plugin-babel": "^1.1.2",
+    "@rsbuild/plugin-react": "^2.0.0",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@tanstack/router-plugin": "^1.167.22",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9.39.4",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   }
 }

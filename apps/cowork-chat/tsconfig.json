@@ -1,8 +1,9 @@
 {
-  "extends": "@cowork/typescript-config/rsbuild.json",
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"],
+  "extends": "@repo/typescript-config/react-app.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM", "DOM.Iterable"]
-  }
+    "outDir": "dist",
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

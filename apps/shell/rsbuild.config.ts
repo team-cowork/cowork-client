@@ -1,38 +1,54 @@
-import { defineConfig } from "@rsbuild/core";
-import { pluginReact } from "@rsbuild/plugin-react";
-import {
-  pluginModuleFederation,
-  createModuleFederationConfig,
-} from "@module-federation/rsbuild-plugin";
-import { tanstackRouter } from "@tanstack/router-plugin/rspack";
+import { pluginModuleFederation } from '@module-federation/rsbuild-plugin';
+import { defineConfig } from '@rsbuild/core';
+import { pluginBabel } from '@rsbuild/plugin-babel';
+import { pluginReact } from '@rsbuild/plugin-react';
+import { tanstackRouter } from '@tanstack/router-plugin/rspack';
 
+// Docs: https://rsbuild.rs/config/
 export default defineConfig({
-  server: { port: 3000 },
-  dev: { assetPrefix: "http://localhost:3000", lazyCompilation: false },
-  source: { entry: { index: "./src/main.tsx" } },
-  html: { template: "./index.html" },
+  source: {
+    entry: {
+      index: './src/main.tsx',
+    },
+  },
+  dev: {
+    assetPrefix: true,
+    lazyCompilation: false,
+  },
+  server: {
+    host: '127.0.0.1',
+    port: 3000,
+  },
   tools: {
     rspack: {
-      plugins: [tanstackRouter({ target: "react", autoCodeSplitting: true })],
+      plugins: [
+        tanstackRouter({
+          target: 'react',
+          autoCodeSplitting: true,
+        }),
+      ],
     },
   },
   plugins: [
     pluginReact(),
-    pluginModuleFederation(
-      createModuleFederationConfig({
-        name: "cowork_shell",
-        experiments: { asyncStartup: true },
-        remotes: {
-          cowork_profile:
-            "cowork_profile@http://localhost:3001/mf-manifest.json",
-          cowork_issue: "cowork_issue@http://localhost:3002/mf-manifest.json",
-          cowork_chat: "cowork_chat@http://localhost:3003/mf-manifest.json",
-        },
-        shared: {
-          react: { singleton: true, eager: false },
-          "react-dom": { singleton: true, eager: false },
-        },
-      }),
-    ),
+    pluginBabel({
+      include: /\.[jt]sx?$/,
+      exclude: [/[\\/]node_modules[\\/]/],
+      babelLoaderOptions(opts) {
+        opts.plugins?.unshift('babel-plugin-react-compiler');
+      },
+    }),
+    pluginModuleFederation({
+      name: 'shell',
+      remotes: {
+        cowork_chat: 'cowork_chat@http://127.0.0.1:3001/mf-manifest.json',
+        cowork_profile: 'cowork_profile@http://127.0.0.1:3002/mf-manifest.json',
+        cowork_issue: 'cowork_issue@http://127.0.0.1:3003/mf-manifest.json',
+      },
+      dts: {
+        consumeTypes: false,
+      },
+      shared: ['react', 'react-dom'],
+    }),
   ],
 });
