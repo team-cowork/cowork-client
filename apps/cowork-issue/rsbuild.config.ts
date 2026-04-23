@@ -9,7 +9,7 @@ import { tanstackRouter } from "@tanstack/router-plugin/rspack";
 export default defineConfig({
   server: { port: 3002 },
   dev: { assetPrefix: "http://localhost:3002", lazyCompilation: false },
-  output: { assetPrefix: "http://localhost:3002" },
+  output: { assetPrefix: process.env.PUBLIC_ASSET_PREFIX ?? "http://localhost:3002" },
   source: { entry: { index: "./src/main.tsx" } },
   html: { template: "./index.html" },
   tools: {

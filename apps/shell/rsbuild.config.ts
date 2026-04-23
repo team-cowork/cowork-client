@@ -23,10 +23,9 @@ export default defineConfig({
         name: "cowork_shell",
         experiments: { asyncStartup: true },
         remotes: {
-          cowork_profile:
-            "cowork_profile@http://localhost:3001/mf-manifest.json",
-          cowork_issue: "cowork_issue@http://localhost:3002/mf-manifest.json",
-          cowork_chat: "cowork_chat@http://localhost:3003/mf-manifest.json",
+          cowork_profile: `cowork_profile@${process.env.PUBLIC_PROFILE_URL ?? "http://localhost:3001"}/mf-manifest.json`,
+          cowork_issue: `cowork_issue@${process.env.PUBLIC_ISSUE_URL ?? "http://localhost:3002"}/mf-manifest.json`,
+          cowork_chat: `cowork_chat@${process.env.PUBLIC_CHAT_URL ?? "http://localhost:3003"}/mf-manifest.json`,
         },
         shared: {
           react: { singleton: true, eager: false },
