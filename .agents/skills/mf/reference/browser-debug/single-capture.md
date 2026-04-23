@@ -9,25 +9,30 @@ node ../scripts/browser-capture.mjs "<url>" [timeout_ms] [--vars var1,var2,...] 
 ```
 
 Default `auto`:
+
 - Navigation phase prefers `domcontentloaded` (interaction/variable capture scenarios); pure log collection falls back to `networkidle`
 - When not explicitly specified, `networkidle` uses a shorter wait ceiling to avoid being slowed down by polling-heavy pages
 
 Increase timeout for slow pages or heavy SPAs:
+
 ```bash
 node ../scripts/browser-capture.mjs "https://example.com/dashboard" 30000
 ```
 
 Capture JavaScript variables:
+
 ```bash
 node ../scripts/browser-capture.mjs "https://example.com" 20000 --vars __FEDERATION__,__NEXT_DATA__,featureFlags
 ```
 
 Capture deep path variables:
+
 ```bash
 node ../scripts/browser-capture.mjs "https://example.com" 20000 --vars __VMOK__.__INSTANCES__,window.__APP_STATE__.user
 ```
 
 Performance-first capture (skip heavy entries and avoid long waits):
+
 ```bash
 node ../scripts/browser-capture.mjs "https://example.com" 12000 --vars __VMOK__.__INSTANCES__ --action-wait none --no-entries
 ```
@@ -56,15 +61,29 @@ node ../scripts/browser-capture.mjs "https://example.com" 12000 --vars __VMOK__.
       "exists": true,
       "value": { "runtime": "webpack" },
       "skippedPaths": [
-        { "path": "__FEDERATION__.snapshotHandler.HostInstance", "reason": "circular", "circularRef": "__FEDERATION__.snapshotHandler" },
+        {
+          "path": "__FEDERATION__.snapshotHandler.HostInstance",
+          "reason": "circular",
+          "circularRef": "__FEDERATION__.snapshotHandler"
+        },
         { "path": "__FEDERATION__.moduleCache.init", "reason": "function", "detail": "init" }
       ]
     },
     "__NEXT_DATA__": { "exists": false, "skippedPaths": [] }
   },
   "entries": [
-    { "t": "2026-03-20T10:00:01.234Z", "level": "error", "msg": "Cannot read properties of undefined (reading 'user')", "stack": "https://example.com/assets/app.js:1:84231" },
-    { "t": "2026-03-20T10:00:02.100Z", "level": "warn",  "msg": "[HTTP] 404 Not Found — https://api.example.com/user/profile", "stack": null }
+    {
+      "t": "2026-03-20T10:00:01.234Z",
+      "level": "error",
+      "msg": "Cannot read properties of undefined (reading 'user')",
+      "stack": "https://example.com/assets/app.js:1:84231"
+    },
+    {
+      "t": "2026-03-20T10:00:02.100Z",
+      "level": "warn",
+      "msg": "[HTTP] 404 Not Found — https://api.example.com/user/profile",
+      "stack": null
+    }
   ]
 }
 ```
@@ -85,6 +104,7 @@ node ../scripts/browser-capture.mjs "https://example.com" 12000 --vars __VMOK__.
 ## Variable serialization
 
 Non-serializable values are handled gracefully:
+
 - Circular references → `[Circular -> path]`
 - Functions → `[Function: name]`
 - Depth > 5 → `[max depth]`

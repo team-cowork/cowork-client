@@ -1,6 +1,6 @@
 ---
 name: pull-request
-description: "Generate a repo-compliant PR title and body, then create a draft GitHub pull request targeting `develop` for this monorepo."
+description: 'Generate a repo-compliant PR title and body, then create a draft GitHub pull request targeting `develop` for this monorepo.'
 allowed-tools: Bash
 ---
 

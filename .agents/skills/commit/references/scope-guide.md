@@ -12,47 +12,47 @@ Always use `<app-name>/<layer>` for changes inside `apps/`. Only use `<layer>` a
 
 Format: `<app-name>/<layer>`
 
-| App               | When to use                        |
-|-------------------|------------------------------------|
-| `cowork-chat`     | Chat features                      |
-| `cowork-issue`    | Issue tracking features            |
-| `cowork-profile`  | User profile features              |
-| `shell`           | Host app, layout, routing          |
+| App              | When to use               |
+| ---------------- | ------------------------- |
+| `cowork-chat`    | Chat features             |
+| `cowork-issue`   | Issue tracking features   |
+| `cowork-profile` | User profile features     |
+| `shell`          | Host app, layout, routing |
 
 ### FSD Layers
 
-| Layer      | When to use                                        |
-|------------|----------------------------------------------------|
-| `app`      | App initialization, providers, global config       |
-| `pages`    | Page-level components and routing                  |
+| Layer      | When to use                                          |
+| ---------- | ---------------------------------------------------- |
+| `app`      | App initialization, providers, global config         |
+| `pages`    | Page-level components and routing                    |
 | `widgets`  | Composite UI blocks assembled from features/entities |
-| `features` | User interactions, business logic slices           |
-| `entities` | Business entities, models, schemas                 |
-| `shared`   | Reusable UI kit, utilities, constants, API clients |
+| `features` | User interactions, business logic slices             |
+| `entities` | Business entities, models, schemas                   |
+| `shared`   | Reusable UI kit, utilities, constants, API clients   |
 
 ### `packages/` — Shared Packages (Layer only)
 
 Format: `<layer>`
 
-| Package             | Typical layer scope               |
-|---------------------|-----------------------------------|
-| `ui`                | `shared`                          |
-| `eslint-config`     | `shared`                          |
-| `typescript-config` | `shared`                          |
+| Package             | Typical layer scope |
+| ------------------- | ------------------- |
+| `ui`                | `shared`            |
+| `eslint-config`     | `shared`            |
+| `typescript-config` | `shared`            |
 
 ### Outside `apps/` and `packages/`
 
-| Scope    | When to use                                       |
-|----------|---------------------------------------------------|
+| Scope    | When to use                                              |
+| -------- | -------------------------------------------------------- |
 | `global` | Root config, turbo.json, pnpm-workspace, CI/CD pipelines |
 
 ## Wrong vs Correct Examples
 
-| Wrong                                        | Correct                                         | Reason                                          |
-|----------------------------------------------|-------------------------------------------------|-------------------------------------------------|
-| `feat(global): 메시지 입력 컴포넌트 추가`           | `feat(cowork-chat/features): 메시지 입력 컴포넌트 추가` | Change is inside cowork-chat app                |
-| `fix(cowork-issue): 이슈 상태 업데이트 버그 수정`    | `fix(cowork-issue/entities): 이슈 상태 업데이트 버그 수정` | Layer must be specified for MFE changes         |
-| `refactor(shared): 공통 버튼 컴포넌트 개선`         | `refactor(shared): 공통 버튼 컴포넌트 개선`            | Correct — change is in `packages/ui`            |
+| Wrong                                             | Correct                                                    | Reason                                  |
+| ------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------- |
+| `feat(global): 메시지 입력 컴포넌트 추가`         | `feat(cowork-chat/features): 메시지 입력 컴포넌트 추가`    | Change is inside cowork-chat app        |
+| `fix(cowork-issue): 이슈 상태 업데이트 버그 수정` | `fix(cowork-issue/entities): 이슈 상태 업데이트 버그 수정` | Layer must be specified for MFE changes |
+| `refactor(shared): 공통 버튼 컴포넌트 개선`       | `refactor(shared): 공통 버튼 컴포넌트 개선`                | Correct — change is in `packages/ui`    |
 
 ## Correct `global` Usage
 

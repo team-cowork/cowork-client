@@ -1,6 +1,6 @@
 **Please respond and work in Korean.**
 
-# Cowork Web Client
+# Cowork Client
 
 ## Project Structure
 

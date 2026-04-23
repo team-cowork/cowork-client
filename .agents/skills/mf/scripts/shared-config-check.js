@@ -23,9 +23,7 @@ function checkExternalsConflict(ctx, results) {
   const shared = (ctx.mfConfig && ctx.mfConfig.shared) || {};
   const externals = (ctx.mfConfig && ctx.mfConfig.externals) || {};
   const sharedKeys = Object.keys(shared);
-  const externalKeys = Array.isArray(externals)
-    ? externals
-    : Object.keys(externals);
+  const externalKeys = Array.isArray(externals) ? externals : Object.keys(externals);
 
   sharedKeys.forEach((name) => {
     if (externalKeys.includes(name)) {
@@ -98,9 +96,7 @@ function main(ctx) {
   checkExternalsConflict(ctx, results);
   checkTransformImport(ctx, results);
   checkMultiVersion(ctx, results);
-  process.stdout.write(
-    `${JSON.stringify({ context: ctx, results }, null, 2)}\n`,
-  );
+  process.stdout.write(`${JSON.stringify({ context: ctx, results }, null, 2)}\n`);
 }
 
 const args = parseArgs(process.argv);

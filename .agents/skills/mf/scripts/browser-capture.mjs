@@ -84,9 +84,7 @@ args.forEach((a, i) => {
     skipIdx.add(i + 1);
   }
 });
-const positional = args.filter(
-  (a, i) => !a.startsWith('--') && !skipIdx.has(i),
-);
+const positional = args.filter((a, i) => !a.startsWith('--') && !skipIdx.has(i));
 
 const targetUrl = positional[0] ?? null;
 const timeout = Number(positional[1] ?? 15_000);
@@ -107,10 +105,7 @@ if (!Number.isFinite(timeout) || timeout <= 0) {
   process.exit(1);
 }
 
-if (
-  entriesLimitRaw != null &&
-  (!Number.isInteger(entriesLimit) || entriesLimit <= 0)
-) {
+if (entriesLimitRaw != null && (!Number.isInteger(entriesLimit) || entriesLimit <= 0)) {
   process.stderr.write(
     `Invalid --entries-limit: ${entriesLimitRaw}. It must be a positive integer.\n`,
   );
@@ -136,31 +131,20 @@ const hasInteractionAction = Boolean(clickTarget || fillArg || selectArg);
 const hasPostActionCapture = Boolean(evalExpr || varNames.length || dumpDom);
 // Auto-enable --no-entries for pure interaction steps on an existing tab (click/fill/select
 // with no variable/eval/dom capture): entries are noise and slow down the chain.
-const noEntries =
-  noEntriesFlag ||
-  Boolean(tabId && hasInteractionAction && !hasPostActionCapture);
+const noEntries = noEntriesFlag || Boolean(tabId && hasInteractionAction && !hasPostActionCapture);
 const waitUntil = parsedWaitUntil ?? 'auto';
 const actionWait = parsedActionWait ?? 'auto';
-const effectiveWaitUntil =
-  waitUntil === 'auto' ? 'domcontentloaded' : waitUntil;
+const effectiveWaitUntil = waitUntil === 'auto' ? 'domcontentloaded' : waitUntil;
 const effectiveActionWait =
-  actionWait === 'auto'
-    ? hasInteractionAction
-      ? 'domcontentloaded'
-      : 'none'
-    : actionWait;
+  actionWait === 'auto' ? (hasInteractionAction ? 'domcontentloaded' : 'none') : actionWait;
 const navigateWaitBudgetMs = hasWaitUntilFlag
   ? timeout
   : Math.min(timeout, AUTO_NETWORKIDLE_MAX_MS);
-const actionWaitBudgetMs = hasActionWaitFlag
-  ? timeout
-  : Math.min(timeout, AUTO_NETWORKIDLE_MAX_MS);
+const actionWaitBudgetMs = hasActionWaitFlag ? timeout : Math.min(timeout, AUTO_NETWORKIDLE_MAX_MS);
 
 if (typeof WebSocket === 'undefined') {
   process.stderr.write(
-    'Node.js 21+ required (built-in WebSocket). Current: ' +
-      process.version +
-      '\n',
+    'Node.js 21+ required (built-in WebSocket). Current: ' + process.version + '\n',
   );
   process.exit(1);
 }
@@ -180,32 +164,25 @@ class Session {
       if (msg.id != null) {
         const p = this.#pending.get(msg.id);
         this.#pending.delete(msg.id);
-        msg.error
-          ? p?.reject(new Error(msg.error.message))
-          : p?.resolve(msg.result);
+        msg.error ? p?.reject(new Error(msg.error.message)) : p?.resolve(msg.result);
       }
-      if (msg.method)
-        this.#listeners.get(msg.method)?.forEach((fn) => fn(msg.params));
+      if (msg.method) this.#listeners.get(msg.method)?.forEach((fn) => fn(msg.params));
     });
   }
 
   open() {
     return new Promise((resolve, reject) => {
       this.#ws.addEventListener('open', resolve, { once: true });
-      this.#ws.addEventListener(
-        'error',
-        (e) => reject(new Error(String(e.message ?? e))),
-        { once: true },
-      );
+      this.#ws.addEventListener('error', (e) => reject(new Error(String(e.message ?? e))), {
+        once: true,
+      });
     });
   }
 
   send(method, params = {}) {
     const id = this.#nextId++;
     this.#ws.send(JSON.stringify({ id, method, params }));
-    return new Promise((resolve, reject) =>
-      this.#pending.set(id, { resolve, reject }),
-    );
+    return new Promise((resolve, reject) => this.#pending.set(id, { resolve, reject }));
   }
 
   on(event, fn) {
@@ -248,9 +225,7 @@ if (tabId) {
   }
   process.stderr.write(`Attaching to tab: ${tab.url}\n`);
 } else {
-  process.stderr.write(
-    `Navigating to ${targetUrl} (timeout: ${timeout / 1000}s)...\n`,
-  );
+  process.stderr.write(`Navigating to ${targetUrl} (timeout: ${timeout / 1000}s)...\n`);
   tab = await (await fetch(`${CDP_BASE}/json/new`, { method: 'PUT' })).json();
 }
 
@@ -308,19 +283,16 @@ const pendingUrls = new Map();
 session.on('Network.requestWillBeSent', ({ requestId, request }) =>
   pendingUrls.set(requestId, request.url),
 );
-session.on(
-  'Network.loadingFailed',
-  ({ requestId, errorText, blockedReason, canceled }) => {
-    if (canceled) return;
-    logs.push({
-      t: stamp(),
-      level: 'error',
-      msg: `[network] ${blockedReason ?? errorText} — ${pendingUrls.get(requestId) ?? '?'}`,
-      stack: null,
-    });
-    pendingUrls.delete(requestId);
-  },
-);
+session.on('Network.loadingFailed', ({ requestId, errorText, blockedReason, canceled }) => {
+  if (canceled) return;
+  logs.push({
+    t: stamp(),
+    level: 'error',
+    msg: `[network] ${blockedReason ?? errorText} — ${pendingUrls.get(requestId) ?? '?'}`,
+    stack: null,
+  });
+  pendingUrls.delete(requestId);
+});
 
 session.on('Log.entryAdded', ({ entry }) => {
   if (entry.level === 'verbose') return;
@@ -449,9 +421,7 @@ if (clickTarget) {
   const clickStart = Date.now();
   process.stderr.write(`Clicking: \"${clickTarget}\"\\n`);
 
-  const beforeTabs = followNewTab
-    ? await (await fetch(`${CDP_BASE}/json/list`)).json()
-    : null;
+  const beforeTabs = followNewTab ? await (await fetch(`${CDP_BASE}/json/list`)).json() : null;
 
   const r = await session.send('Runtime.evaluate', {
     expression: `(function(q) {
@@ -529,9 +499,7 @@ if (clickTarget) {
   clickResult = JSON.parse(r?.result?.value ?? '{\"found\":false}');
 
   if (!clickResult.found) {
-    process.stderr.write(
-      `  Warning: element not found for \"${clickTarget}\"\\n`,
-    );
+    process.stderr.write(`  Warning: element not found for \"${clickTarget}\"\\n`);
   } else {
     process.stderr.write(
       `  Clicked: <${clickResult.tag}> \"${clickResult.text}\" (${clickResult.matchStrategy}/${clickResult.matchType})\\n`,
@@ -547,9 +515,7 @@ if (clickTarget) {
       const deadline = Date.now() + 3000;
       while (Date.now() < deadline && !newTarget) {
         const now = await (await fetch(`${CDP_BASE}/json/list`)).json();
-        newTarget = now.find(
-          (t) => !beforeIds.has(t.id) && (t.type === 'page' || !t.type),
-        );
+        newTarget = now.find((t) => !beforeIds.has(t.id) && (t.type === 'page' || !t.type));
         if (!newTarget) await new Promise((r) => setTimeout(r, 250));
       }
       if (newTarget) {
@@ -596,9 +562,7 @@ if (fillArg) {
   const sep = fillArg.indexOf('::');
   const placeholder = sep !== -1 ? fillArg.slice(0, sep) : fillArg;
   const text = sep !== -1 ? fillArg.slice(sep + 2) : '';
-  process.stderr.write(
-    `Filling: placeholder="${placeholder}" text="${text}"\n`,
-  );
+  process.stderr.write(`Filling: placeholder="${placeholder}" text="${text}"\n`);
 
   const r = await session.send('Runtime.evaluate', {
     expression: `(function(ph, txt) {
@@ -619,13 +583,9 @@ if (fillArg) {
 
   fillResult = JSON.parse(r?.result?.value ?? '{"found":false}');
   if (!fillResult.found) {
-    process.stderr.write(
-      `  Warning: input not found for placeholder="${placeholder}"\n`,
-    );
+    process.stderr.write(`  Warning: input not found for placeholder="${placeholder}"\n`);
   } else {
-    process.stderr.write(
-      `  Filled: <${fillResult.tag}> placeholder="${fillResult.placeholder}"\n`,
-    );
+    process.stderr.write(`  Filled: <${fillResult.tag}> placeholder="${fillResult.placeholder}"\n`);
     await new Promise((r) => setTimeout(r, 200));
     await waitAfterAction(effectiveActionWait, actionWaitBudgetMs);
   }
@@ -642,9 +602,7 @@ if (selectArg) {
   const sep = selectArg.indexOf('::');
   const placeholder = sep !== -1 ? selectArg.slice(0, sep) : selectArg;
   const value = sep !== -1 ? selectArg.slice(sep + 2) : '';
-  process.stderr.write(
-    `Selecting: placeholder="${placeholder}" value="${value}"\n`,
-  );
+  process.stderr.write(`Selecting: placeholder="${placeholder}" value="${value}"\n`);
 
   // Step 1: try native <select>, otherwise click the custom dropdown trigger
   const r1 = await session.send('Runtime.evaluate', {
@@ -680,10 +638,7 @@ if (selectArg) {
 
   selectResult = JSON.parse(r1?.result?.value ?? '{"found":false}');
 
-  if (
-    selectResult.type === 'custom' &&
-    selectResult.step === 'trigger_clicked'
-  ) {
+  if (selectResult.type === 'custom' && selectResult.step === 'trigger_clicked') {
     // Step 2: wait for dropdown to open, then click the matching option
     await new Promise((r) => setTimeout(r, 300));
     const r2 = await session.send('Runtime.evaluate', {
@@ -885,9 +840,7 @@ const result = {
   ...(noEntries
     ? {}
     : {
-        entries: entriesLimit
-          ? logs.slice(Math.max(0, logs.length - entriesLimit))
-          : logs,
+        entries: entriesLimit ? logs.slice(Math.max(0, logs.length - entriesLimit)) : logs,
       }),
 };
 
