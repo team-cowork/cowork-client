@@ -23,9 +23,9 @@ importers:
 
   apps/cowork-chat:
     dependencies:
-      '@module-federation/enhanced':
-        specifier: ^2.3.3
-        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3(node-fetch@2.7.0(encoding@0.1.13)))(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
+      '@cowork/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tanstack/react-router':
         specifier: ^1.168.23
         version: 1.168.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -39,18 +39,21 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
+      '@cowork/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@cowork/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@cowork/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@module-federation/enhanced':
+        specifier: ^2.3.3
+        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3(node-fetch@2.7.0(encoding@0.1.13)))(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
       '@module-federation/rsbuild-plugin':
         specifier: ^2.3.3
         version: 2.3.3(@rsbuild/core@2.0.0(@module-federation/runtime-tools@2.3.3(node-fetch@2.7.0(encoding@0.1.13))))(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3(node-fetch@2.7.0(encoding@0.1.13)))(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@rsbuild/core':
         specifier: ^2.0.0
         version: 2.0.0(@module-federation/runtime-tools@2.3.3)
@@ -90,9 +93,9 @@ importers:
 
   apps/cowork-issue:
     dependencies:
-      '@module-federation/enhanced':
-        specifier: ^2.3.3
-        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
+      '@cowork/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tanstack/react-router':
         specifier: ^1.168.23
         version: 1.168.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -106,18 +109,21 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
+      '@cowork/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@cowork/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@cowork/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@module-federation/enhanced':
+        specifier: ^2.3.3
+        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
       '@module-federation/rsbuild-plugin':
         specifier: ^2.3.3
         version: 2.3.3(@rsbuild/core@2.0.0(@module-federation/runtime-tools@2.3.3))(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@rsbuild/core':
         specifier: ^2.0.0
         version: 2.0.0(@module-federation/runtime-tools@2.3.3)
@@ -157,9 +163,9 @@ importers:
 
   apps/cowork-profile:
     dependencies:
-      '@module-federation/enhanced':
-        specifier: ^2.3.3
-        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
+      '@cowork/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tanstack/react-router':
         specifier: ^1.168.23
         version: 1.168.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -173,18 +179,21 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
+      '@cowork/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@cowork/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@cowork/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@module-federation/enhanced':
+        specifier: ^2.3.3
+        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
       '@module-federation/rsbuild-plugin':
         specifier: ^2.3.3
         version: 2.3.3(@rsbuild/core@2.0.0(@module-federation/runtime-tools@2.3.3))(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@rsbuild/core':
         specifier: ^2.0.0
         version: 2.0.0(@module-federation/runtime-tools@2.3.3)
@@ -224,9 +233,9 @@ importers:
 
   apps/shell:
     dependencies:
-      '@module-federation/enhanced':
-        specifier: ^2.3.3
-        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
+      '@cowork/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tanstack/react-router':
         specifier: ^1.168.23
         version: 1.168.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -240,18 +249,21 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
+      '@cowork/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@cowork/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@cowork/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@module-federation/enhanced':
+        specifier: ^2.3.3
+        version: 2.3.3(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(node-fetch@2.7.0(encoding@0.1.13))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
       '@module-federation/rsbuild-plugin':
         specifier: ^2.3.3
         version: 2.3.3(@rsbuild/core@2.0.0(@module-federation/runtime-tools@2.3.3))(@rspack/core@2.0.0(@module-federation/runtime-tools@2.3.3)(@swc/helpers@0.5.21))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@rsbuild/core':
         specifier: ^2.0.0
         version: 2.0.0(@module-federation/runtime-tools@2.3.3)
@@ -348,10 +360,10 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
     devDependencies:
-      '@repo/eslint-config':
+      '@cowork/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/typescript-config':
+      '@cowork/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
