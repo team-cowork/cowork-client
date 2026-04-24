@@ -21,9 +21,7 @@ function main(ctx) {
   const results = [];
 
   if (ctx.mfConfig && ctx.mfConfig.exposes) {
-    const hasExportApp = Object.keys(ctx.mfConfig.exposes).some((k) =>
-      /export-app/i.test(k),
-    );
+    const hasExportApp = Object.keys(ctx.mfConfig.exposes).some((k) => /export-app/i.test(k));
     if (!hasExportApp) {
       results.push({
         code: 'BRIDGE-USAGE',
@@ -43,9 +41,7 @@ function main(ctx) {
     context: {},
   });
 
-  process.stdout.write(
-    `${JSON.stringify({ context: ctx, results }, null, 2)}\n`,
-  );
+  process.stdout.write(`${JSON.stringify({ context: ctx, results }, null, 2)}\n`);
 }
 
 const args = parseArgs(process.argv);

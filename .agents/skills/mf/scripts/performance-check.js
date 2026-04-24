@@ -20,9 +20,7 @@ function parseArgs(argv) {
 function main(ctx) {
   const results = [];
   const bundlerName = (ctx.bundler && ctx.bundler.name) || 'unknown';
-  const hasTypescript = Boolean(
-    ctx.dependencies && ctx.dependencies.typescript,
-  );
+  const hasTypescript = Boolean(ctx.dependencies && ctx.dependencies.typescript);
 
   results.push({
     code: 'PERF',
@@ -52,9 +50,7 @@ function main(ctx) {
     });
   }
 
-  process.stdout.write(
-    `${JSON.stringify({ context: ctx, results }, null, 2)}\n`,
-  );
+  process.stdout.write(`${JSON.stringify({ context: ctx, results }, null, 2)}\n`);
 }
 
 const args = parseArgs(process.argv);

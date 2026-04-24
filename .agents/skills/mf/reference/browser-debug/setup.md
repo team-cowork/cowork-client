@@ -22,6 +22,7 @@ profile can still decrypt cookies — so you stay logged into all your sites.
 ## One-time setup (macOS)
 
 **Step 1 — See which profiles you have:**
+
 ```bash
 node -e "
 const fs = require('fs');
@@ -39,6 +40,7 @@ console.log('\nDefault: ' + last);
 ```
 
 **Step 2 — Sync the chosen profile to the debug location:**
+
 ```bash
 # Set PROFILE to the dir you want (default: current profile, usually "Default")
 PROFILE="Default"   # ← change to e.g. "Profile 1" if needed
@@ -66,6 +68,7 @@ killall "Google Chrome" 2>/dev/null; sleep 1
 ```
 
 **One-time alias** — add to `~/.zshrc`:
+
 ```bash
 # Usage: chrome-debug [ProfileDir]   e.g. chrome-debug "Profile 1"
 chrome-debug() {
@@ -83,11 +86,13 @@ chrome-debug() {
 ```
 
 Then run (using current/default profile):
+
 ```bash
 chrome-debug
 ```
 
 Or pick a specific profile:
+
 ```bash
 chrome-debug "Profile 1"
 ```
@@ -101,6 +106,7 @@ curl -s http://localhost:9222/json/version
 ```
 
 Should return something like:
+
 ```json
 {
   "Browser": "Chrome/124.0.0.0",

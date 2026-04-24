@@ -1,8 +1,9 @@
 {
-  "extends": "@cowork/typescript-config/base.json",
-  "include": ["."],
-  "exclude": ["node_modules"],
+  "extends": "@cowork/typescript-config/react-library.json",
   "compilerOptions": {
+    "outDir": "dist",
     "strictNullChecks": true
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

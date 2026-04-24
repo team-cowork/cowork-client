@@ -47,6 +47,7 @@ Construct the MF config based on the gathered parameters:
 ### Remote entries (for consumer / both)
 
 **Demo provider** (use when user chose `demo`):
+
 ```ts
 remotes: {
   'provider': 'rslib_provider@https://unpkg.com/module-federation-rslib-provider@latest/dist/mf/mf-manifest.json',
@@ -54,6 +55,7 @@ remotes: {
 ```
 
 The demo provider exposes a React component at `'provider'`. The user can import it in their app:
+
 ```tsx
 import ProviderApp from 'provider';
 ```
@@ -64,6 +66,7 @@ Ask the user to provide remote entries in the format `name: url`, then use them 
 ### Exposes (for provider / both)
 
 Use the entries provided by the user. Example:
+
 ```ts
 exposes: {
   './Button': './src/components/Button.tsx',
@@ -73,6 +76,7 @@ exposes: {
 ### Shared deps
 
 Read `package.json` to check which frameworks are present. Set singletons accordingly:
+
 - If `react` + `react-dom` present: add both as `{ singleton: true }`
 - If `vue` present: add as `{ singleton: true }`
 - If both (rare): add all as singletons
@@ -289,6 +293,7 @@ pnpm add @module-federation/enhanced
 #### 4b. Enable local Webpack
 
 Add to `.env.local`:
+
 ```
 NEXT_PRIVATE_LOCAL_WEBPACK=true
 ```
@@ -348,19 +353,20 @@ If the user says **yes**:
 
 Search for the entry component file in this priority order:
 
-| Bundler | Candidates (in order) |
-|---|---|
-| Rsbuild | `src/App.tsx`, `src/App.jsx`, `src/App.js` |
-| Modern.js | `src/routes/page.tsx`, `src/routes/page.jsx` |
+| Bundler          | Candidates (in order)                                                        |
+| ---------------- | ---------------------------------------------------------------------------- |
+| Rsbuild          | `src/App.tsx`, `src/App.jsx`, `src/App.js`                                   |
+| Modern.js        | `src/routes/page.tsx`, `src/routes/page.jsx`                                 |
 | Webpack / Rspack | `src/App.tsx`, `src/App.jsx`, `src/App.js`, `src/index.tsx`, `src/index.jsx` |
-| Next.js | `pages/index.tsx`, `pages/index.jsx`, `pages/index.js` |
-| Vite | `src/App.tsx`, `src/App.jsx`, `src/App.js` |
+| Next.js          | `pages/index.tsx`, `pages/index.jsx`, `pages/index.js`                       |
+| Vite             | `src/App.tsx`, `src/App.jsx`, `src/App.js`                                   |
 
 Read the first file that exists. If none found, tell the user which file to modify manually and show the snippet — do not attempt blind writes.
 
 ### 5b. Determine remote name and import path
 
 Use the remote name from the config generated in Step 4:
+
 - If demo provider: remote name is `provider`, import path is `'provider'`
 - If custom remotes: use the first remote name the user specified
 
@@ -371,6 +377,7 @@ Add the import at the top of the file (after existing imports) and render the co
 **For React (Rsbuild / Rspack / Webpack / Vite)**
 
 Add import after the last existing import line:
+
 ```tsx
 import ProviderApp from 'provider';
 ```
@@ -401,10 +408,12 @@ Replace `<remote-name>` with the actual remote name (e.g., `provider`).
 ### Provider: how to verify the exposed module
 
 Tell the user that after running the dev server, the manifest will be available at:
+
 - Rsbuild / Rspack / Webpack / Modern.js: `http://localhost:<port>/mf-manifest.json`
 - Next.js: `http://localhost:<port>/static/chunks/remoteEntry.js`
 
 Another app can reference this app as a remote using:
+
 ```ts
 remotes: {
   '<app-name>': '<app-name>@http://localhost:<port>/mf-manifest.json',
@@ -416,6 +425,7 @@ remotes: {
 ## Step 6: Summary
 
 Output a concise summary:
+
 - What files were created or modified
 - What packages were installed
 - How to start the dev server (use existing script from `package.json`)

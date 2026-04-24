@@ -1,13 +1,9 @@
 {
-  "extends": "@cowork/typescript-config/rsbuild.json",
-  "include": ["src", "@mf-types"],
-  "exclude": ["node_modules", "dist"],
+  "extends": "@cowork/typescript-config/react-app.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "paths": {
-      "cowork_profile/*": ["./@mf-types/cowork_profile/*"],
-      "cowork_issue/*": ["./@mf-types/cowork_issue/*"],
-      "cowork_chat/*": ["./@mf-types/cowork_chat/*"]
-    }
-  }
+    "outDir": "dist",
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -17,20 +17,29 @@ node scripts/performance-check.js --context '<MFContext-JSON>'
 Provide recommendations for each item in the output `results` and `context.bundler.name`:
 
 **PERF · info — `dev.disableAssetsAnalyze`** (applies to all projects)
+
 - Disabling bundle size analysis during local development significantly improves HMR speed
 - Add to the Rsbuild config:
   ```js
-  dev: { disableAssetsAnalyze: true }
+  dev: {
+    disableAssetsAnalyze: true;
+  }
   ```
 
 **PERF · info — Rspack `splitChunks` optimization** (shown only when `bundler.name` is `rspack` or `rsbuild`)
+
 - Setting `splitChunks.chunks` to `"async"` reduces initial bundle size and speeds up first-screen loading
 - Add to the build config:
   ```js
-  output: { splitChunks: { chunks: 'async' } }
+  output: {
+    splitChunks: {
+      chunks: 'async';
+    }
+  }
   ```
 
 **PERF · info — TypeScript DTS optimization** (shown only when `typescript` dependency is detected)
+
 - If type generation (DTS) is the main bottleneck, options include:
   1. Temporarily disable DTS: set `dts: false` in the `@module-federation/enhanced` config
   2. Switch to `ts-go` for significantly faster type generation
@@ -48,11 +57,13 @@ If the user confirms, execute the following steps in order:
 2. **Configure** — set `dts.generateTypes.compilerInstance = "tsgo"` in the Module Federation config
 
 3. **Install** — install the required package using the project's package manager from MFContext:
+
    ```bash
    pnpm add @typescript/native-preview --save-dev
    ```
 
 4. **Regenerate** — run:
+
    ```bash
    npx mf dts
    ```

@@ -1,33 +1,9 @@
-# `Turborepo` Vite starter
+# cowork
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+<img width="255" alt="Icon" src="https://github.com/user-attachments/assets/df49f1f2-59da-408f-86e6-63e44616b063" />
 
-## Using this example
+광주소프트웨어마이스터고등학교 협업 관리 플랫폼
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest -e with-vite
-```
-
-## What's inside?
-
-This Turborepo includes the following packages and apps:
-
-### Apps and Packages
-
-- `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+[LICENSE](LICENSE) | [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)
