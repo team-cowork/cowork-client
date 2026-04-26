@@ -24,7 +24,7 @@ export const config = [
       'simple-import-sort/imports': [
         'error',
         {
-          groups: [['^react$'], ['^@repo(/.*)?$'], ['^@?\\w'], ['^@/'], ['^\\.']],
+          groups: [['^react$'], ['^@cowork(/.*)?$'], ['^@?\\w'], ['^@/'], ['^\\.']],
         },
       ],
       'simple-import-sort/exports': 'error',
