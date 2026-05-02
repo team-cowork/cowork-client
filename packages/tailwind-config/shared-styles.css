@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --cowork-primitive-red-50: #ffeeee;
   --cowork-primitive-red-100: #ffd4d6;
@@ -110,6 +118,46 @@
 }
 
 @theme inline {
+  --font-sans:
+    'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-cowork: var(--font-sans);
+
+  --text-display-small: 1.625rem;
+  --text-display-small--line-height: 2.1875rem;
+  --text-display-medium: 1.75rem;
+  --text-display-medium--line-height: 2.375rem;
+  --text-display-large: 1.875rem;
+  --text-display-large--line-height: 2.5625rem;
+  --text-title-small: 1.25rem;
+  --text-title-small--line-height: 1.6875rem;
+  --text-title-medium: 1.375rem;
+  --text-title-medium--line-height: 1.875rem;
+  --text-title-large: 1.5rem;
+  --text-title-large--line-height: 2rem;
+  --text-body-x-small: 0.8125rem;
+  --text-body-x-small--line-height: 1.25rem;
+  --text-body-medium: 1.0625rem;
+  --text-body-medium--line-height: 1.625rem;
+  --text-body-medium-strong: 1.0625rem;
+  --text-body-medium-strong--line-height: 1.625rem;
+  --text-body-large: 1.1875rem;
+  --text-body-large--line-height: 1.8125rem;
+  --text-subtext-small: 0.75rem;
+  --text-subtext-small--line-height: 1rem;
+  --text-subtext-medium: 0.8125rem;
+  --text-subtext-medium--line-height: 1.125rem;
+  --text-subtext-large: 0.9375rem;
+  --text-subtext-large--line-height: 1.25rem;
+  --text-label-x-small: 0.8125rem;
+  --text-label-x-small--line-height: 1rem;
+  --text-label-small: 0.9375rem;
+  --text-label-small--line-height: 1.1875rem;
+  --text-label-medium: 1.0625rem;
+  --text-label-medium--line-height: 1.3125rem;
+  --text-label-large: 1.1875rem;
+  --text-label-large--line-height: 1.5rem;
+
   --color-cowork-red-50: var(--cowork-primitive-red-50);
   --color-cowork-red-100: var(--cowork-primitive-red-100);
   --color-cowork-red-200: var(--cowork-primitive-red-200);
@@ -183,4 +231,140 @@
   --color-inverse-surface: var(--cowork-semantic-inverse-surface);
   --color-inverse-on-surface: var(--cowork-semantic-inverse-on-surface);
   --color-inverse-primary: var(--cowork-semantic-inverse-primary);
+}
+
+@utility typography-display-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-display-small);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-display-small--line-height);
+}
+
+@utility typography-display-medium {
+  font-family: var(--font-cowork);
+  font-size: var(--text-display-medium);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-display-medium--line-height);
+}
+
+@utility typography-display-large {
+  font-family: var(--font-cowork);
+  font-size: var(--text-display-large);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-display-large--line-height);
+}
+
+@utility typography-title-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-title-small);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-title-small--line-height);
+}
+
+@utility typography-title-medium {
+  font-family: var(--font-cowork);
+  font-size: var(--text-title-medium);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-title-medium--line-height);
+}
+
+@utility typography-title-large {
+  font-family: var(--font-cowork);
+  font-size: var(--text-title-large);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  line-height: var(--text-title-large--line-height);
+}
+
+@utility typography-body-x-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-body-x-small);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-body-x-small--line-height);
+}
+
+@utility typography-body-medium {
+  font-family: var(--font-cowork);
+  font-size: var(--text-body-medium);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-body-medium--line-height);
+}
+
+@utility typography-body-medium-strong {
+  font-family: var(--font-cowork);
+  font-size: var(--text-body-medium-strong);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0;
+  line-height: var(--text-body-medium-strong--line-height);
+}
+
+@utility typography-body-large {
+  font-family: var(--font-cowork);
+  font-size: var(--text-body-large);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-body-large--line-height);
+}
+
+@utility typography-subtext-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-subtext-small);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-subtext-small--line-height);
+}
+
+@utility typography-subtext-medium {
+  font-family: var(--font-cowork);
+  font-size: var(--text-subtext-medium);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-subtext-medium--line-height);
+}
+
+@utility typography-subtext-large {
+  font-family: var(--font-cowork);
+  font-size: var(--text-subtext-large);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0;
+  line-height: var(--text-subtext-large--line-height);
+}
+
+@utility typography-label-x-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-label-x-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: var(--text-label-x-small--line-height);
+}
+
+@utility typography-label-small {
+  font-family: var(--font-cowork);
+  font-size: var(--text-label-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: var(--text-label-small--line-height);
+}
+
+@utility typography-label-medium {
+  font-family: var(--font-cowork);
+  font-size: var(--text-label-medium);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: var(--text-label-medium--line-height);
+}
+
+@utility typography-label-large {
+  font-family: var(--font-cowork);
+  font-size: var(--text-label-large);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: var(--text-label-large--line-height);
 }
